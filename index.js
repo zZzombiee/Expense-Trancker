@@ -9,7 +9,7 @@ app.use(cors());
 
 const port = 8000;
 
-app.use("/api", appRouter);
+app.use("/", appRouter);
 
 app.listen(port, () => {
   console.log(`server running at a http://localhost:${port}/`);

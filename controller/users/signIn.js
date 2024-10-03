@@ -1,11 +1,11 @@
 import { sql } from "../../src/database";
 
 exports.signIn = async (request, response) => {
-  const { firstName, password } = request.body;
+  const { email, password } = request.body;
 
   try {
     const signInUser = await sql`SELECT * FROM users 
-              WHERE firstName=${firstName} AND password=${password}`;
+              WHERE email=${email} AND password=${password}`;
 
     if (signInUser[0] === undefined) {
       try {

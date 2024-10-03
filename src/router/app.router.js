@@ -7,12 +7,14 @@ import { postTransaction } from "../../controller/records/postTransaction";
 import { getTransaction } from "../../controller/records/getTransaction";
 import { putTransaction } from "../../controller/records/putTransaction";
 import { deleteTransaction } from "../../controller/records/deleteTransaction";
+import { getUser } from "../../controller/users/getUsers";
 
 export const appRouter = express.Router();
 
 appRouter
   .post("/signup", signUp)
-  .get("/signin", signIn)
+  .post("/signin", signIn)
+  .get("/user", getUser)
   .post("/category", postCategory)
   .get("/category", getCategories)
   .post("/transaction", postTransaction)

@@ -11,6 +11,6 @@ exports.postCategory = async (request, response) => {
       .status(200)
       .json({ message: "added new category", newCategorydata: newCategory });
   } catch (error) {
-    response.status(400).json({ message: error });
+    response.status(400).json({ message: "aldaa", error: error });
   }
 };
