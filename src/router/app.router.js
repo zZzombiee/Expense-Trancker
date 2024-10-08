@@ -14,10 +14,10 @@ export const appRouter = express.Router();
 appRouter
   .post("/signup", signUp)
   .post("/signin", signIn)
-  .get("/user", getUser)
+  .post("/user", getUser)
   .post("/category", postCategory)
   .get("/category", getCategories)
   .post("/transaction", postTransaction)
-  .get("/transaction", getTransaction)
+  .post("/gettransaction", getTransaction)
   .put("/transaction/:userId", putTransaction)
   .delete("/transaction/:userId", deleteTransaction);

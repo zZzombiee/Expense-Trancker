@@ -3,7 +3,7 @@ import { sql } from "../../src/database";
 exports.getUser = async (request, response) => {
   const { userid } = request.body;
   try {
-    const getUser = await sql`SELECTç * FROM users WHERE userid=${userid}`;
+    const getUser = await sql`SELECT * FROM users WHERE userid=${userid}`;
 
     response.status(200).json({ message: getUser });
   } catch (error) {
