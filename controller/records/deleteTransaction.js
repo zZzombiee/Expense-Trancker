@@ -1,9 +1,9 @@
 const { sql } = require("../../src/database");
 
 exports.deleteTransaction = async (request, response) => {
-  const { userId } = request.params;
+  const { recordid } = request.body;
   try {
-    await sql`DELETE FROM record WHERE recordid=${userId}`;
+    await sql`DELETE FROM record WHERE recordid=${recordid}`;
     const records = await sql`SELECT * FROM record`;
 
     response.status(200).json({ message: `deleted record `, data: records });

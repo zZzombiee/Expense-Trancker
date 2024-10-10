@@ -8,6 +8,7 @@ import { getTransaction } from "../../controller/records/getTransaction";
 import { putTransaction } from "../../controller/records/putTransaction";
 import { deleteTransaction } from "../../controller/records/deleteTransaction";
 import { getUser } from "../../controller/users/getUsers";
+import { deleteCategory } from "../../controller/categories/deleteCategory";
 
 export const appRouter = express.Router();
 
@@ -20,4 +21,5 @@ appRouter
   .post("/transaction", postTransaction)
   .post("/gettransaction", getTransaction)
   .put("/transaction/:userId", putTransaction)
-  .delete("/transaction/:userId", deleteTransaction);
+  .post("/removeTransaction", deleteTransaction)
+  .post("/removeCategory", deleteCategory);
